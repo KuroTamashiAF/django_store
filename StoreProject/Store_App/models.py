@@ -23,3 +23,10 @@ class Product(models.Model):
     def __str__(self):
         return (f"{self.name_product} {self.price_product} {self.date_registrations_product} "
                 f"{self.quantity_product}")
+
+
+class Order(models.Model):
+    order_client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    order_product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    total_price = models.DecimalField(max_digits=7, decimal_places=2)
+    date_order = models.DateField(auto_now_add=True)
