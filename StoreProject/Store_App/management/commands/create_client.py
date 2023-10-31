@@ -8,6 +8,6 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         client = Client(name_client="Alex", email_client="sofa@mouse.net",
                         number_phone_client="+39264564563",
-                        address_client="island Paradise from AoT")
+                        address_client="island,Paradise,from,AoT")
         client.save()
 

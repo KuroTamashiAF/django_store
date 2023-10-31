@@ -3,7 +3,7 @@ from Store_App.models import Client
 
 
 class Command(BaseCommand):
-    help = "change name client in DB"
+    help = "change email client in DB"
 
     def add_arguments(self, parser):
         parser.add_argument("old_email")
