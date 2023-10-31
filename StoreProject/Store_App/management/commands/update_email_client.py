@@ -6,13 +6,13 @@ class Command(BaseCommand):
     help = "change name client in DB"
 
     def add_arguments(self, parser):
-        parser.add_argument("old_name")
-        parser.add_argument("new_name")
+        parser.add_argument("old_email")
+        parser.add_argument("new_email")
 
     def handle(self, *args, **options):
-        new_name = options["new_name"]
-        old_name = options["old_name"]
-        client = Client.objects.filter(name_client=old_name).first()
-        client.name_client = new_name
+        new_email = options["new_email"]
+        old_email = options["old_email"]
+        client = Client.objects.filter(email_client=old_email).first()
+        client.email_client = new_email
         client.save()
         self.stdout.write(f"{client}")
