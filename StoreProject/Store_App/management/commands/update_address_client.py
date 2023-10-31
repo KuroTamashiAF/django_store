@@ -16,14 +16,3 @@ class Command(BaseCommand):
         client.address_client = new_address
         client.save()
         self.stdout.write(f"{client}")
-
-
-"""client.address_client = new_address
-    ^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'NoneType' object has no attribute 'address_client'"""
-
-"""
-from StoreProject.Store_App.models import Client
-ModuleNotFoundError: No module named 'StoreProject.Store_App'
-(venv) PS E:\Python_projects\django\Store\StoreProject> 
-"""
