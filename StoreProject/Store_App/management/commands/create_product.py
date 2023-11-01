@@ -6,9 +6,9 @@ class Command(BaseCommand):
     help = "crete the product"
 
     def handle(self, *args, **options):
-        product = Product(name_product="NoteBook Lenovo gaming-3",
-                          description_product="NoteBook",
-                          price_product=95000.00,
-                          quantity_product=5)
+        product = Product(name_product="Microwave Eaton 7500",
+                          description_product="Microwave for food",
+                          price_product=15489.459,
+                          quantity_product=10)
         product.save()
         self.stdout.write(f"{product}")
