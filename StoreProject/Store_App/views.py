@@ -6,4 +6,4 @@ from .models import Order, Client, Product
 def out_order(request, client_id):
     client = Client.objects.get(id=client_id)
     order = Order.objects.filter(order_client=client)
-    render(request, "", {"client": client, "order": order})
+    render(request, "Store_App/order_out.html", {"client": client, "order": order})

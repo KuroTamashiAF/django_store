@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Заказ номер {{ order.id }}</title>
 </head>
 <body>
-
+<p>Имя клиента {{ client.name_client }} </p>
+<br>
+<p>Товары клиента {{ order.order_product }}</p>
+<p>Сумма к оплате {{ order.total_price }}</p>
 </body>
 </html>
