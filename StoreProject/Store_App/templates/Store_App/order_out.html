@@ -7,10 +7,10 @@
 <body>
 <p>Имя клиента {{ client.name_client }} </p>
 <br>
-<p>Товары клиента:</p><br>
+<p>Заказы клиента:</p><br>
 <ol>
     {% for order in orders %}
-    <li>{{ order.order_product }}</li>
+    <li>{{ order.pk }}</li>
     {% endfor %}
 </ol>
 <p>Сумма к оплате {{ total_price_all }}</p>
