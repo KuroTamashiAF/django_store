@@ -2,12 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Заказ номер {{ order.id }}</title>
+    <title>Заказ номер {{ order.pk }}</title>
 </head>
 <body>
 <p>Имя клиента {{ client.name_client }} </p>
 <br>
-<p>Товары клиента {{ order.order_product }}</p>
-<p>Сумма к оплате {{ order.total_price }}</p>
+<p>Товары клиента:</p><br>
+<ol>
+    {% for order in orders %}
+    <li>{{ order.order_product }}</li>
+    {% endfor %}
+</ol>
+<p>Сумма к оплате {{ total_price_all }}</p>
+<br>
+<ol>
+    {% for product in products %}
+    <li>{{ product.name_product }}</li>
+    {% endfor %}
+</ol>
+
+
 </body>
 </html>
