@@ -18,10 +18,11 @@ def out_order(request, client_id):
 
 
 def all_products(request, client_id, num_days_ago):
+    products = []
     client = Client.objects.get(pk=client_id)
     now = date.today()
     before = now - timedelta(days=num_days_ago)
     orders = Order.objects.filter(order_client=client, date_order__range=(before, now))
-    return render(request, "", {"before": before,
-                                "orders": orders,
-                                "client": client})
+
+    return render(request, "Store_App/out_product_by_days_ago.html",
+                  {"before": before, "now": now, "orders": orders, "client": client})

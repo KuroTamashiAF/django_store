@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+<title>{% block title%} Заказы клиента: {{ client.name_client }} {% endblock%}</title>
+</head>
+<body>
+{% block content %}
+<h1>Заказы клиента за период с {{ before }} до {{ now }}</h1>
+<ol>
+    {% for order in orders %}
+    <li>{{ order.order_product }}</li>
+    {% endfor %}
+</ol>
+{% endblock%}
+</body>
+</html>
