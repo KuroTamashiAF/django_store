@@ -1,0 +1,10 @@
+{% extends 'Store_App/edit_product.html' %}
+
+{% block find %}
+<p>Поиск продукта:</p>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="button" value="Отправить">
+</form>
+{% endblock %}

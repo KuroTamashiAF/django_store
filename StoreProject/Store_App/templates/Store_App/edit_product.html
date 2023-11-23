@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+{% extends 'base.html' %}
+
+<title>{% block title%} Продукт: {{ product.name_product }} {% endblock%}</title>
 </head>
 <body>
+{% block find %}
+
+{% endblock %}
+
+{% block content %}
+<p>Изменение данных о продуте {{ product.name_produc }}</p>
+<p>Наименование продукта: {{ product.name_product }}</p>
+<p>Описание продукта: {{ product.description_product }}</p>
+<p>Стоимость: {{ product.price_product }}</p>
+<p>Количество на складе: {{ product.quantity_product }}</p>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit" value="Отправить">
+</form>
+{% endblock%}
 
 </body>
 </html>
