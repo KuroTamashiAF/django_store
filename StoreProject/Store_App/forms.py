@@ -1,8 +1,9 @@
 from django import forms
+from datetime import date
 
 
 class FindProduct(forms.Form):
-    find_product_by_id = forms.IntegerField()
+    product_id = forms.IntegerField()
 
 
 class EditProduct(forms.Form):
