@@ -19,7 +19,7 @@ class Product(models.Model):
     price_product = models.DecimalField(max_digits=7, decimal_places=2)
     quantity_product = models.IntegerField()
     date_registrations_product = models.DateField(auto_now_add=True)
-    fotografy_product = models.ImageField(upload_to='Store_App/picture/default.jpg')
+    fotografy_product = models.ImageField()
 
     def __str__(self):
         return (f"{self.name_product} {self.price_product} {self.date_registrations_product} "

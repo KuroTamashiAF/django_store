@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+<p>Название продукта: {{ product.name_product }}</p>
+<p>Описание продукта: {{ product.description_product }}</p>
+<p>Стоимость: {{ product.price_product }}</p>
+<p>Количество: {{ product.quantity_product }}</p>
+<p>Фото: <img src="media\iiiiii_G8ISYzl.jpg"></p>
+<img src='{{ product.fotografy_product }}'>
+</body>
+{% endblock %}
