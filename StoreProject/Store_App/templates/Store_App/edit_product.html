@@ -20,8 +20,9 @@
 <p>Описание продукта: {{ product.description_product }}</p>
 <p>Стоимость: {{ product.price_product }}</p>
 <p>Количество на складе: {{ product.quantity_product }}</p>
-<p>Фото: {{ product.fotografy_product }}</p>
-
+{% if product.fotografy_product != None %}
+    <p>Фото:<img src="{{ product.fotografy_product.url }}"></p>
+{% endif %}
 
 <a href="{% url 'find_product' %}"> Назад </a>
 {% endblock%}

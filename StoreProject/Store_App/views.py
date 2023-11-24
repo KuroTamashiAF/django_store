@@ -56,12 +56,12 @@ def edit_product(request, product_id):
             image = form.cleaned_data['image']
             logger.info(f'get-{name_product}-{description_product}-{price_product}-{quantity_product}-'
                         f'{image}')
-            fs = FileSystemStorage()
-            fs.save(image.name, image)
-
+            # залогировали
+            if image is not None:
+                fs = FileSystemStorage()
+                fs.save(image.name, image)
             # взяли из формы
 
-            # залогировали
             product.name_product = name_product
             product.description_product = description_product
             product.price_product = price_product
