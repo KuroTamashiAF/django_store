@@ -61,7 +61,6 @@ def edit_product(request, product_id):
                 fs = FileSystemStorage()
                 fs.save(image.name, image)
             # взяли из формы
-
             product.name_product = name_product
             product.description_product = description_product
             product.price_product = price_product
