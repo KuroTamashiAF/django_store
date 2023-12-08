@@ -40,6 +40,10 @@ class AdminProduct(admin.ModelAdmin):
     image_preview.short_description = "Image preview"
 
 
+class AdminOrder(admin.ModelAdmin):
+    pass
+
+
 admin.site.register(Client, AdminClient)
 admin.site.register(Product, AdminProduct)
 admin.site.register(Order)
