@@ -41,9 +41,17 @@ class AdminProduct(admin.ModelAdmin):
 
 
 class AdminOrder(admin.ModelAdmin):
-    pass
+    """Настройка для отображения всех заказов список """
+    list_display = ['id', 'order_client', 'order_product', 'total_price', 'date_order']
+    ordering = ['id']
+    list_filter = ['date_order']
+    search_fields = ['id']
+    search_help_text = "Поиск по полю id"
+    """Настройка вывода информации об объекте"""
+    fields = ['id', 'order_client', 'order_product', 'total_price', 'date_order']
+    readonly_fields = ['id', 'date_order']
 
 
 admin.site.register(Client, AdminClient)
 admin.site.register(Product, AdminProduct)
-admin.site.register(Order)
+admin.site.register(Order, AdminOrder)
